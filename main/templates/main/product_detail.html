@@ -28,23 +28,9 @@
                 <li>Кабинет</li>
             </ul>
 
-        <div class="presentation"></div>
+
     </header>
-    <div class="main">
-        {% for el in clothing %}
-        <div class="item">
-        {% if el.productimage_set.all %}
-            <a href="{% url 'product_detail' el.slug %}">
-                <img src="{{ el.productimage_set.first.image.url }}" alt="{{ product.name }} Image">
-            </a>
-            {% else %}
-                <p>No image available</p>
-            {% endif %}
-            <div class="name">{{ el.name }}</div>
-            <div class="price">{{ el.price }} ₽</div>
-        </div>
-        {% endfor %}
-    </div>
+
     <footer>
         Все права защищены &copy;
     </footer>

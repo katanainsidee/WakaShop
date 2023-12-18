@@ -9,6 +9,10 @@ body {
     color: #222;
     font-family: 'Montserrat', sans-serif;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .wrapper {
     width: 1280px;
     margin: 50px auto;
@@ -16,6 +20,10 @@ body {
 header .logo {
     font-weight: 600;
     font-size: 20px;
+    transition: opacity 0.15s ease;
+}
+.logo:hover{
+    opacity: 0.8;
 }
 
 header ul.nav {
