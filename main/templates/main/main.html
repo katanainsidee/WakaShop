@@ -20,11 +20,25 @@
             <ul class="nav">
                 <li>Про нас</li>
                 <li>Контакты</li>
+                <li>Корзина</li>
                 <li>Кабинет</li>
             </ul>
         </div>
         <div class="presentation"></div>
     </header>
+    <div class="main">
+        {% for el in clothing %}
+        <div class="item">
+        {% if el.productimage_set.all %}
+                <img src="{{ el.productimage_set.first.image.url }}" alt="{{ product.name }} Image">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+            <div class="name">{{ el.name }}</div>
+            <div class="price">{{ el.price }} ₽</div>
+        </div>
+        {% endfor %}
+    </div>
     <footer>
         Все права защищены &copy;
     </footer>
