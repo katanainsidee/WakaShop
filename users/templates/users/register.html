@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/register.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -14,30 +14,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/icons/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'main/icons/site.webmanifest' %}">
-    <title>Gone Brand Shop</title>
+    <title>Регистрация</title>
 </head>
 <body>
-<div class="wrapper">
-    <header>
-
-            <span class="logo"><a href="{% url 'home' %}">Gone Brand Shop</a></span>
-            <ul class="nav">
-                <li>Про нас</li>
-                <li>Контакты</li>
-                <li>Корзина</li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'account' %}">Кабинет</a></li>
-                {% else %}
-                    <li><a href="{% url 'login' %}">Кабинет</a></li>
-                {% endif %}
-            </ul>
-
-
-    </header>
-
-    <footer>
-        Все права защищены &copy;
-    </footer>
-</div>
+    <h2>Register</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
 </body>
 </html>
