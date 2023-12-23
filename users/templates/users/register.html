@@ -14,14 +14,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/icons/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'main/icons/site.webmanifest' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Регистрация</title>
 </head>
 <body>
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
+    <div class="wrapper-form">
+        <form method="post" class="login-form">
+            <h1>Регистрация</h1>
+            {% csrf_token %}
+            <div class="input-box">
+                {{ form.username }}
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                {{ form.email }}
+                <i class='bx bxs-envelope'></i>
+            </div>
+            <div class="input-box">
+                {{ form.password1 }}
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <div class="input-box">
+                {{ form.password2 }}
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+
+
+            <button type="submit" class="submit-button">Зарегистрироваться</button>
+        </form>
+
+        <div class="register-link">
+            <p>Есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+        </div>
+    </div>
 </body>
 </html>

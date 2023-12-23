@@ -8,7 +8,6 @@ body {
     background-color: white;
     color: #222;
     font-family: 'Montserrat', sans-serif;
-    display: flex;
 }
 a{
     text-decoration: none;
@@ -17,7 +16,6 @@ a{
 .wrapper {
     width: 1280px;
     margin: 50px auto;
-
 }
 header .logo {
     font-weight: 600;
@@ -42,19 +40,4 @@ header ul.nav li{
 }
 header ul.nav li:hover{
     opacity: 0.8;
-}
-
-footer {
-    text-align: center;
-    margin-top: auto;
-
-}
-
-.menu {
-    margin-top: 50px;
-}
-
-.menu li{
-    list-style-type: none;
-    margin: 20px 0;
 }

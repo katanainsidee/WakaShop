@@ -22,8 +22,8 @@
 
             <span class="logo"><a href="{% url 'home' %}">Gone Brand Shop</a></span>
             <ul class="nav">
-                <li>Про нас</li>
-                <li>Контакты</li>
+                <li><a href="{% url 'about' %}">Про нас</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
                 <li>Корзина</li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'account' %}">Кабинет</a></li>
