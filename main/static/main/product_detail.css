@@ -132,3 +132,8 @@ header ul.nav li:hover{
     color: white;
     transform: scale(1.03);
 }
+
+footer {
+    text-align: center;
+    margin-top: 80px;
+}
