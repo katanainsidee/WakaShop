@@ -62,3 +62,11 @@ li{
     list-style: none;
     margin-top: 15px;
 }
+.text {
+    position: relative;
+}
+.map {
+    position: absolute;
+    right: 100px;
+    bottom: 180px;
+}
