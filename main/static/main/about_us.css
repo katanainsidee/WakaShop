@@ -47,11 +47,14 @@ header ul.nav li:hover{
 }
 
 .wrapper .main .text{
-    font-size: 25px;
+    font-size: 22px;
     text-align: justify;
 }
 
 footer {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 200px;
+}
+.main {
+    margin-top: 30px;
 }
