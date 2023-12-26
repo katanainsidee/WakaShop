@@ -23,14 +23,17 @@
             <ul class="nav">
                 <li><a href="{% url 'about' %}">Про нас</a></li>
                 <li><a href="{% url 'contacts' %}">Контакты</a></li>
-                <li>Корзина</li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'view_cart' %}">Корзина</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Корзина</a></li>
+                {% endif %}
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'account' %}">Кабинет</a></li>
                 {% else %}
                     <li><a href="{% url 'login' %}">Кабинет</a></li>
                 {% endif %}
             </ul>
-
         <div class="presentation"></div>
     </header>
     <div class="main">

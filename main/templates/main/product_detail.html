@@ -30,7 +30,11 @@
             <ul class="nav">
                 <li><a href="{% url 'about' %}">Про нас</a></li>
                 <li><a href="{% url 'contacts' %}">Контакты</a></li>
-                <li>Корзина</li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'view_cart' %}">Корзина</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Корзина</a></li>
+                {% endif %}
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'account' %}">Кабинет</a></li>
                 {% else %}
@@ -55,7 +59,14 @@
            <div class="clothing-type">Тип: {{ product.clothing_type }}</div>
             <div class="description"> {{ product.description }}</div>
            <div class="price">Цена - {{ product.price }} ₽</div>
-            <button class="add-to-cart">В корзину</button>
+            {% if user.is_authenticated %}
+            <form action="{% url 'add_to_cart' product.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="add-to-cart">В корзину</button>
+            </form>
+                {% else %}
+                <a href="{% url 'login' %}"><button  class="add-to-cart">В корзину</button></a>
+            {% endif %}
         </div>
         </div>
     </div>
