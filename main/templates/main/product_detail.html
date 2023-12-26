@@ -14,6 +14,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main/icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main/icons/favicon-16x16.png' %}">
     <link rel="manifest" href="{% static 'main/icons/site.webmanifest' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <style>
+        /* Увеличение размера иконок */
+
+    </style>
+    <script src="{% static 'main/slider.js' %}"></script>
     <title>Gone Brand Shop</title>
 </head>
 <body>
@@ -31,13 +37,28 @@
                     <li><a href="{% url 'login' %}">Кабинет</a></li>
                 {% endif %}
             </ul>
-
-
     </header>
-
-    <footer>
-        Все права защищены &copy;
-    </footer>
+    <div class="main">
+        <div class="container">
+            <div class="slider">
+                <div id="slider-container">
+                    {% for image in product.productimage_set.all %}
+                        <img src="{{ image.image.url }}" alt="img_here" class="slider-image">
+                    {% endfor %}
+                <i id="prev-btn" class='bx bx-chevron-left' ></i>
+                <i id="next-btn" class='bx bx-chevron-right' ></i>
+                </div>
+            </div>
+        <div class="info">
+            <div class="name">{{ product.name }} </div>
+           <div class="brand">Брэнд: {{ product.brand }} </div>
+           <div class="clothing-type">Тип: {{ product.clothing_type }}</div>
+            <div class="description"> {{ product.description }}</div>
+           <div class="price">Цена - {{ product.price }} ₽</div>
+            <button class="add-to-cart">В корзину</button>
+        </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
